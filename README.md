@@ -1,0 +1,2 @@
+# scum-theme
+hyprland dots
