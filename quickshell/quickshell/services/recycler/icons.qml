@@ -1,0 +1,28 @@
+  component Battery: QtObject {
+    id: material
+
+    // property string lvl_0: "󰂎"
+    // property string lvl_5: "󱃍"
+    // property string lvl_10: "󰁺"
+    // property string lvl_20: ""
+    // property string lvl_30: ""
+    // property string lvl_40: "󰁽"
+    // property string lvl_50: "󰁾"
+    // property string lvl_60: "󰁿"
+    // property string lvl_70: "󰂀"
+    // property string lvl_80: "󰂁"
+    // property string lvl_90: "󰂂"
+    // property string lvl_100: "󰁹"
+    // property string lvl_0_chrg: "󰢟"
+    // property string lvl_10_chrg: "󰢜"
+    // property string lvl_20_chrg: "󰂆"
+    // property string lvl_30_chrg: "󰂇"
+    // property string lvl_40_chrg: "󰂈"
+    // property string lvl_50_chrg: "󰢝"
+    // property string lvl_60_chrg: "󰂉"
+    // property string lvl_70_chrg: "󰢞"
+    // property string lvl_80_chrg: "󰂊"
+    // property string lvl_90_chrg: "󰂋"
+    // property string lvl_100_chrg: "󰂅"
+    // property string unknown: "󰂑"
+  }      
