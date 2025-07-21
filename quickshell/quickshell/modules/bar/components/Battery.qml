@@ -7,52 +7,52 @@ import qs.widgets
 //  ▙▘▀▌▜▘▜▘█▌▛▘▌▌
 //  ▙▘█▌▐▖▐▖▙▖▌ ▙▌
 //              ▄▌
+//    scum
 Item {
   id: root
 
   property UPowerDevice bat: UPower.displayDevice
   // bat.percentage gives like 12 decimal places, floor it
   property int percent: Math.floor(bat.percentage * 100)
-  implicitWidth: 30
-  implicitHeight: 30
+
+  implicitWidth: percVal.width + nfIcon.width
+  implicitHeight: parent.height // bar height
 
   StyledRect {
     id: rect
 
-    implicitWidth: nfIcon.contentWidth
-    implicitHeight: 30
+    implicitWidth: root.implicitWidth
+    anchors.fill: parent
+    border.color: "cyan"
+    border.width: 1
 
-    /* UPower is not reporting battery-level-0thru100-symbolic :( */
-    // IconImage {
-    //   id: icon
-    //   source: root.bat.iconName ? "image://icon/" + root.bat.iconName : ""
-    //   // implicitWidth: 32
-    //   // implicitHeight: 32
-    // }
-    StyledText {
-      id: nfIcon
+    Item {
+      id: textBox
+      anchors.fill: parent
+      StyledText {
+        id: nfIcon
 
-      property bool isCharging: root.bat.state === 1
-      property bool pending: root.bat.state === 5 // 5 === "PendingCharge" enum member
+        property bool isCharging: root.bat.state === 1
+        property bool pending: root.bat.state === 5 // 5 === "PendingCharge" enum member
 
-      anchors.centerIn: parent
-      color: pending || isCharging ? "green" : "white"
-      text: Icons.getBatIcon(root.percent, pending || isCharging) // + " " + root.percent + "%"
-      font.pointSize: 24
-
-      verticalAlignment: Text.AlignVCenter
+        anchors.verticalCenter: parent.verticalCenter
+        // color: pending || isCharging ? "green" : "white"
+        // NerdFont battery icon
+        // getBatIcon returns an array of two strings -- the nf icon, and the color hex code
+        property var iconData: Icons.getBatIcon(root.percent, pending || isCharging)
+        text: iconData[0]
+        color: pending || isCharging ? "green" : iconData[1]
+        font.pointSize: 32
+      }
       StyledText {
         id: percVal
 
-        anchors.left: parent.right
         anchors.verticalCenter: parent.verticalCenter
-        verticalAlignment: Text.AlignVCenter
+        anchors.left: nfIcon.right
         text: root.percent + "%"
         font.pointSize: 12
         color: "white"
       }
-
-      // anchors.right: icon.left
     }
   }
 }

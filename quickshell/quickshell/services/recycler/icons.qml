@@ -1,6 +1,22 @@
   component Battery: QtObject {
     id: material
 
+		// in Battery.qml
+		    /* UPower is not reporting battery-level-0thru100-symbolic :( */
+    // IconImage {
+    //   id: icon
+    //   source: root.bat.iconName ? "image://icon/" + root.bat.iconName : ""
+    //   // implicitWidth: 32
+    //   // implicitHeight: 32
+    // }
+    // MouseArea {
+    //   anchors.fill: root
+    //   enabled: true
+    //   hoverEnabled: true
+    //   // onEntered: rect.color
+		// }
+
+
     // property string lvl_0: "󰂎"
     // property string lvl_5: "󱃍"
     // property string lvl_10: "󰁺"
@@ -25,4 +41,4 @@
     // property string lvl_90_chrg: "󰂋"
     // property string lvl_100_chrg: "󰂅"
     // property string unknown: "󰂑"
-  }      
+  }

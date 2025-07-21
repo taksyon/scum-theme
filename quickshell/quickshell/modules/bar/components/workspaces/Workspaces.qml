@@ -6,11 +6,11 @@ import Quickshell.Hyprland
 import qs.config
 import qs.widgets
 
-//  ▖  ▖    ▌
-//  ▌▞▖▌▛▌▛▘▙▘▛▘▛▌▀▌▛▘█▌▛▘
-//  ▛ ▝▌▙▌▌ ▛▖▄▌▙▌█▌▙▖▙▖▄▌
-//              ▌
-//              scum
+//         ▌
+//  ▌▌▌▛▌▛▘▙▘▛▘▛▌▀▌▛▘█▌▛▘
+//  ▚▚▘▙▌▌ ▛▖▄▌▙▌█▌▙▖▙▖▄▌
+//             ▌
+//      scum
 Item {
   id: root
 

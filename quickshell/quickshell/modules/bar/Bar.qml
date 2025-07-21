@@ -6,6 +6,10 @@ import qs.widgets
 import qs.modules.bar.components.workspaces
 import qs.modules.bar.components
 
+//  ▌        ▄
+//  ▛▌▀▌▛▘  ▖▌▌
+//  ▙▌█▌▌   ▖▙▘
+//     scum
 Item {
   id: root
   implicitHeight: 50
@@ -22,15 +26,16 @@ Item {
     }
 
     margins {
-      left: 15
       top: 15
-      right: 15
     }
-
     Item {
       id: shelf
       anchors.fill: parent
 
+      anchors {
+        leftMargin: 15
+        rightMargin: 15
+      }
       StyledRect {
         id: backdrop
 
@@ -41,22 +46,49 @@ Item {
         radius: Appearance.rounding.normal
       }
 
-      RowLayout {
+      Row {
         id: compLayout
         anchors.fill: parent
-        uniformCellSizes: true
+        // uniformCellSizes: true
         anchors.leftMargin: 20
         anchors.rightMargin: 20
 
         Workspaces {
-          Layout.alignment: Qt.AlignLeft
+          anchors {
+            left: parent.left
+            verticalCenter: parent.verticalCenter
+          }
+          // Layout.alignment: Qt.AlignLeft
+          // // Layout.fillWidth: true
+          // Layout.fillHeight: true
+          // Layout.margins: 5
         }
         Clock {
-          Layout.alignment: Qt.AlignHCenter
+          anchors {
+            horizontalCenter: parent.horizontalCenter
+            verticalCenter: parent.verticalCenter
+          }
+          // Layout.alignment: Qt.AlignHCenter
+          // Layout.fillWidth: true
+          // Layout.fillHeight: true
+          // Layout.margins: 5
         }
         Battery {
-          Layout.alignment: Qt.AlignRight | Qt.AlignVCenter
+          anchors {
+            right: parent.right
+            verticalCenter: parent.verticalCenter
+          }
+          // Layout.alignment: Qt.AlignRight
+          // Layout.fillWidth: true
+          // Layout.fillHeight: true
+          // Layout.margins: 5
         }
+        // Clock {
+        //   // Layout.alignment: Qt.AlignRight
+        //   // Layout.fillWidth: true
+        //   Layout.fillHeight: true
+        //   Layout.margins: 5
+        // }
       }
     }
   }
