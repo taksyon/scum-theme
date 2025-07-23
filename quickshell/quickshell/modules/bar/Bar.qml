@@ -6,6 +6,7 @@ import qs.widgets
 import qs.modules.bar.components.workspaces
 import qs.modules.bar.components
 
+// miniwa ascii text art
 //  ▌        ▄
 //  ▛▌▀▌▛▘  ▖▌▌
 //  ▙▌█▌▌   ▖▙▘
@@ -40,55 +41,50 @@ Item {
         id: backdrop
 
         anchors.fill: parent
-        color: "#80000000"
+        color: "#95000000"
         border.width: 1
-        border.color: "cyan"
+        border.color: "white"
         radius: Appearance.rounding.normal
       }
 
-      Row {
+      //  ▛▘▛▌▌▌▌
+      //  ▌ ▙▌▚▚▘
+      Item {
         id: compLayout
         anchors.fill: parent
-        // uniformCellSizes: true
-        anchors.leftMargin: 20
-        anchors.rightMargin: 20
 
+        // anchors.leftMargin: 20
+        // anchors.rightMargin: 20
         Workspaces {
+          id: ws
           anchors {
             left: parent.left
             verticalCenter: parent.verticalCenter
           }
-          // Layout.alignment: Qt.AlignLeft
-          // // Layout.fillWidth: true
-          // Layout.fillHeight: true
-          // Layout.margins: 5
+        }
+        Title {
+          id: title
+          anchors {
+            left: ws.right
+            verticalCenter: parent.verticalCenter
+            leftMargin: 20
+          }
         }
         Clock {
+          id: clock
           anchors {
             horizontalCenter: parent.horizontalCenter
             verticalCenter: parent.verticalCenter
           }
-          // Layout.alignment: Qt.AlignHCenter
-          // Layout.fillWidth: true
-          // Layout.fillHeight: true
-          // Layout.margins: 5
         }
         Battery {
+          id: battery
           anchors {
             right: parent.right
+            rightMargin: 20
             verticalCenter: parent.verticalCenter
           }
-          // Layout.alignment: Qt.AlignRight
-          // Layout.fillWidth: true
-          // Layout.fillHeight: true
-          // Layout.margins: 5
         }
-        // Clock {
-        //   // Layout.alignment: Qt.AlignRight
-        //   // Layout.fillWidth: true
-        //   Layout.fillHeight: true
-        //   Layout.margins: 5
-        // }
       }
     }
   }

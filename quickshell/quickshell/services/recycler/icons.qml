@@ -17,6 +17,8 @@
 		// }
 
 
+  // property string maxWS: Hyprland.workspaces.values[wsLength - 1].name // the highest workspace ID
+
     // property string lvl_0: "󰂎"
     // property string lvl_5: "󱃍"
     // property string lvl_10: "󰁺"

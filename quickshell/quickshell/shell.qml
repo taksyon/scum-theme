@@ -7,10 +7,9 @@ import qs.modules.bar
 //  ▙▌▙▌▌▙▖▛▖▄▌▌▌▙▖▐▖▐▖  ▖ ▌
 //   ▌                    ▗▘
 ShellRoot {
-    Item {
-        implicitHeight: 50
-        Bar {}
-    }
+  Item {
+    Bar {}
+  }
 }
-
 // qml-lsp-git
+

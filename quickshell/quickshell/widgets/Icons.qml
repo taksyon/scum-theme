@@ -7,7 +7,7 @@ Singleton {
   id: root
 
   readonly property Battery battery: Battery {}
-  function getBatIcon(percent: int, charging: bool) {
+  function getBatIcon(percent: int, charging: bool): void {
     // nananananananananananananananana
     const batmap = new Map([[0, charging ? "󰢟" : "󰂎"], [5, charging ? "󰢟" : "󱃍"], [10, charging ? "󰢜" : "󰁺"], [20, charging ? "󰂆" : "󰁻"], [30, charging ? "󰂇" : "󰁼"], [40, charging ? "󰂈" : "󰁽"], [50, charging ? "󰢝" : "󰁾"], [60, charging ? "󰂉" : "󰁿"], [70, charging ? "󰢞" : "󰂀"], [80, charging ? "󰂊" : "󰂁"], [90, charging ? "󰂋" : "󰂂"], [100, charging ? "󰂅" : "󰁹"]])
     const colormap = new Map([[0, "#360000"], [5, "#670202"], [10, "#ff0000"], [20, "#ff00d6"], [30, "#8f00ff"], [40, "#000fff"], [50, "#009eff"], [60, "#00fffa"], [70, "#00ff99"], [80, "#00ff44"], [90, "#00ff00"], [100, "#ffffff"]])
