@@ -1,4 +1,6 @@
 import Quickshell
+import Quickshell.Hyprland
+import Quickshell.Wayland
 import QtQuick
 import QtQuick.Layouts
 import qs.config
@@ -13,12 +15,11 @@ import qs.modules.bar.components
 //     scum
 Item {
   id: root
-  implicitHeight: 50
 
   PanelWindow {
     id: bar
 
-    implicitHeight: root.implicitHeight
+    implicitHeight: 50
     color: "transparent"
     anchors {
       left: true
@@ -53,14 +54,13 @@ Item {
         id: compLayout
         anchors.fill: parent
 
-        // anchors.leftMargin: 20
-        // anchors.rightMargin: 20
         Workspaces {
           id: ws
           anchors {
             left: parent.left
             verticalCenter: parent.verticalCenter
           }
+          // Multi
         }
         Title {
           id: title
@@ -77,6 +77,7 @@ Item {
             verticalCenter: parent.verticalCenter
           }
         }
+
         Battery {
           id: battery
           anchors {
